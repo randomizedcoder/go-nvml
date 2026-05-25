@@ -221,6 +221,21 @@ The repo's existing `.golangci.yaml` is left untouched — the nix checks
 pass their own `--config nix/golangci/*.yml`, so the IDE workflow is
 unchanged.
 
+## Upstream submission status (as of 2026-05-24)
+
+The triage above has begun landing as upstream PRs. Counts in the executive summary remain pinned to the 2026-05-24 baseline; this section tracks what has moved against that snapshot.
+
+### Open
+
+| PR | Title | Findings closed |
+|---|---|---|
+| [NVIDIA/go-nvml#183](https://github.com/NVIDIA/go-nvml/pull/183) | docs: fix typo in libraryOptions godoc comment | 1 × `misspell` (`pkg/nvml/api.go:30` "paramaters" → "parameters") + 1 word-substitution ("than" → "that") on the same line, not flagged by linters |
+
+### Cumulative coverage against the 2026-05-24 baseline
+
+- **`misspell`**: 1 of 1 covered by #183 (open).
+- **`gosec` HIGH (G122)**, **G103 LOW (10)**, **`nilerr` (26 false positives)**, **`errcheck` (3)**, **ST1003 (50)** — untouched. See the triage recommendation above.
+
 ## Repro one-liner
 
 ```sh
